@@ -20,9 +20,13 @@ export class LoginPage implements OnInit {
     private router: Router,
     private authService: AuthService
   ) {
+    if (StorageUtil.getToken()) {
+      this.router.navigate(['app/home']);
+    }
   }
 
   ngOnInit() {
+
   }
 
   login() {

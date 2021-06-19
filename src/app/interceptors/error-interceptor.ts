@@ -9,13 +9,17 @@ import {
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {retry, catchError} from 'rxjs/operators';
-import {StorageUtil} from "../utils/storage.util";
-import {Router} from "@angular/router";
+import {StorageUtil} from '../utils/storage.util';
+import {Router} from '@angular/router';
+import {AlertController} from '@ionic/angular';
 
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private alertCtrl: AlertController
+  ) {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -35,6 +39,12 @@ export class ErrorInterceptor implements HttpInterceptor {
             case 403:
               this.handler403();
               break;
+            case 401:
+              this.handler401(responseError);
+              break;
+
+            default:
+              this.handlerDefault(responseError);
           }
           return Observable.throw(responseError);
         })
@@ -46,6 +56,23 @@ export class ErrorInterceptor implements HttpInterceptor {
     this.router.navigate(['']);
   }
 
+  async handler401(error) {
+    const alert = await this.alertCtrl.create({
+      header: 'Atenção ',
+      message: error.message,
+      buttons: ['OK'],
+    });
+    alert.present();
+  }
+
+  async handlerDefault(error) {
+    const alert = await this.alertCtrl.create({
+      header: 'Error ',
+      message: error.message,
+      buttons: ['OK'],
+    });
+    alert.present();
+  }
 }
 
 
