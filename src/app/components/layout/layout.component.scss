@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+
+.content-main{
+  flex: 1;
+  background-color: #f3f6f9;
+}
+
+
+.content-tab{
+  height: 60px;
+  background-color: white;
+}
+
