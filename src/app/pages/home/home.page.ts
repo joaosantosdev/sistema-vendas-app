@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CategoryService} from '../../services/category.service';
+import {CategoryDTO} from '../../models/CategoryDTO';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() {}
-  ngOnInit() {}
+  public categories: CategoryDTO[];
+
+  constructor(private categoryService: CategoryService) {
+  }
+
+  ngOnInit() {
+    this.categoryService.getAll().subscribe((response) => {
+      this.categories = response;
+    });
+  }
 
 }

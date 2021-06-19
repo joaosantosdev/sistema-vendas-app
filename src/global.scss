@@ -29,14 +29,14 @@
 :root{
   --primary:#534bc2;
   --white: #fff;
-  --secundary: #f3f6f9;
+  --secondary: #dfdeec;
   --default:#5f6368;
 }
 
 
 .input{
   border-radius: 10px;
-  background-color: var(--secundary);
+  background-color: var(--secondary);
   border:0;
   outline: none;
   padding: 10px;

@@ -1,11 +1,6 @@
 <div class="tab-menu">
-  <div class="item">
-    <app-tab-item></app-tab-item>
+  <div class="item" *ngFor="let item of items">
+    <app-tab-item [item]="item"></app-tab-item>
   </div>
-  <div class="item">
-    <app-tab-item></app-tab-item>
-  </div>
-  <div class="item">
-    <app-tab-item></app-tab-item>
-  </div>
+
 </div>
