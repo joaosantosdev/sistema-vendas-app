@@ -14,13 +14,16 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./pages/home/home.page.module').then(m => m.HomePageModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./pages/profile/profile.page.module').then( m => m.ProfilePageModule)
       }
     ]
   },
-  {
-    path: 'category',
-    loadChildren: () => import('./pages/category/category.page.module').then(m => m.CategoryPageModule)
-  }
+
+
+
 
 ];
 

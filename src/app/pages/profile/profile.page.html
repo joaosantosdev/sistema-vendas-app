@@ -1,0 +1,7 @@
+<div class="profile-page">
+  <div class="content-img mb-15">
+    <img [src]="urlImageClient" (error)="onErrorImage()">
+  </div>
+  <h3 class="info mb-15">  {{client?.name}}</h3>
+  <div class="info">  {{client?.email}}</div>
+</div>

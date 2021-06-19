@@ -10,4 +10,13 @@ export class StorageUtil {
   public static cleanToken(): void {
     localStorage.removeItem('token');
   }
+
+  public static setEmail(email: string): void {
+    localStorage.setItem('email', email);
+  }
+
+  public static getEmail(): string {
+    return localStorage.getItem('email');
+  }
+
 }

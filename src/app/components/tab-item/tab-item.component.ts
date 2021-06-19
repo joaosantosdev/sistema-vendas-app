@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-tab-item',
@@ -8,9 +8,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class TabItemComponent implements OnInit {
 
   @Input() public item;
+  @Output() public onclick = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  click() {
+    this.onclick.emit(this.item);
+  }
 }

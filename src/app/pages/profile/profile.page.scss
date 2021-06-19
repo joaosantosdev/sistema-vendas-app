@@ -1,0 +1,27 @@
+.profile-page {
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.content-img {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+.content-img img{
+  border-radius: 100%;
+}
+
+.info{
+  font-weight: bold;
+  color: var(--default);
+}
