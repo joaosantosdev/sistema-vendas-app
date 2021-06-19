@@ -9,6 +9,9 @@ export class HttpService {
   constructor(private http: HttpClient) {
   }
 
+  post(url, data, config = {}): Observable<any> {
+    return this.http.post(`${environment.baseUrl}/${url}`, data, config);
+  }
 
   get(url): Observable<any> {
     return this.http.get(`${environment.baseUrl}/${url}`);

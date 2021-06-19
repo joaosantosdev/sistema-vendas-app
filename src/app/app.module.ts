@@ -12,6 +12,8 @@ import {HttpService} from './services/http.service';
 import {LayoutComponent} from './components/layout/layout.component';
 import {TabMenuComponent} from './components/tab-menu/tab-menu.component';
 import {TabItemComponent} from './components/tab-item/tab-item.component';
+import {ErrorInterceptorProvider} from './interceptors/error-interceptor';
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,12 +28,13 @@ import {TabItemComponent} from './components/tab-item/tab-item.component';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule
-
   ],
   providers: [
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     CategoryService,
-    HttpService
+    AuthService,
+    HttpService,
+    ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent],
 })

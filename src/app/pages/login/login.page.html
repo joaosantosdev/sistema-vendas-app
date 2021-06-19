@@ -2,11 +2,16 @@
   <img src="assets/imgs/logo.png">
   <div class="d-flex mb-10">
     <label class="label">Email</label>
-    <input class="input">
+    <input class="input"
+           [(ngModel)]="loginForm.email"
+           name="email">
   </div>
   <div class="d-flex mb-15">
     <label class="label">Senha</label>
-    <input class="input" type="password">
+    <input class="input"
+           type="password"
+           [(ngModel)]="loginForm.password"
+           name="password">
   </div>
   <button class="button bg-primary mb-10"
           (click)="login()">Entrar</button>

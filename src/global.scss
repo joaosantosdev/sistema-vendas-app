@@ -63,10 +63,12 @@
 }
 .button{
   border-radius: 100px;
-  height: 30px;
+  height: 37px;
   -webkit-box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
   -moz-box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
   box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
+  font-weight: bold;
+  font-size: 15px;
 }
 .bg-primary{
   background-color: var(--primary);
