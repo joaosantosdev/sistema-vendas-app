@@ -1,3 +1,23 @@
 .home-page{
   padding: 10px;
 }
+
+.content-img{
+  width: 50px;
+}
+
+.img-user{
+  width: 50px;
+  border-radius: 100%;
+}
+
+.content-info-user{
+  display: flex;
+}
+.content-info-user .info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 0;
+
+}

@@ -3,5 +3,18 @@
     <img [src]="urlImageClient" (error)="onErrorImage()">
   </div>
   <h3 class="info mb-15">  {{client?.name}}</h3>
-  <div class="info">  {{client?.email}}</div>
+  <div class="info mb-15">  {{client?.email}}</div>
+
+  <h3 class="info">Endereço</h3>
+  <div *ngFor="let address of client?.adresses">
+    <div class="info">
+      {{address.city.state.name}},
+      {{address.city.name}},
+      {{address.district}},
+      {{address.number}}
+    </div>
+  </div>
+
+
+  <div class="link" (click)="logout()">Sair</div>
 </div>

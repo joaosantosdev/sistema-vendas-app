@@ -1,4 +1,3 @@
-
 /*
  * App Global CSS
  * ----------------------------------------------------------------------------
@@ -26,62 +25,81 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-:root{
-  --primary:#534bc2;
+:root {
+  --primary: #534bc2;
   --white: #fff;
-  --secondary:#f3f6f9 ;
-  --default:#5f6368;
+  --secondary: #f3f6f9;
+  --default: #5f6368;
   --inactive: #dfdeec;
 }
 
 
-.input{
+.input {
   border-radius: 10px;
   background-color: var(--secondary);
-  border:0;
+  border: 0;
   outline: none;
-  padding: 10px;
-  color:var(--default);
+  padding: 15px;
+  color: var(--default);
 
 }
 
-.label{
+.label {
   font-weight: bold;
-  color:var(--default);
+  color: var(--default);
   margin-bottom: 5px;
 }
 
-.d-flex{
+.d-flex {
   display: flex;
   flex-direction: column;
 }
 
-.mb-10{
+.mb-10 {
   margin-bottom: 10px;
 }
-.mb-15{
+
+.mb-15 {
   margin-bottom: 15px;
 }
-.button{
+
+.button {
   border-radius: 100px;
-  height: 37px;
-  -webkit-box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
-  -moz-box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
-  box-shadow: 2px 0px 16px 12px rgba(240,239,247,1);
+  -webkit-box-shadow: 2px 0px 16px 12px rgba(240, 239, 247, 1);
+  -moz-box-shadow: 2px 0px 16px 12px rgba(240, 239, 247, 1);
+  box-shadow: 2px 0px 16px 12px rgba(240, 239, 247, 1);
   font-weight: bold;
   font-size: 15px;
+  padding: 15px;
 }
-.bg-primary{
+
+.bg-primary {
   background-color: var(--primary);
   color: var(--white);
 }
 
-.w-100{
+.w-100 {
   width: 100%;
 }
 
-.link{
+.link {
   font-weight: bold;
   color: var(--primary);
   text-align: center;
+}
+
+.font-weight {
+  font-weight: bold;
+}
+
+.cl-primary {
+  color: var(--primary);
+}
+
+.cl-default {
+  color: var(--default);
+}
+
+.mt-0{
+  margin-top: 0!important;
 }

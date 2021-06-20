@@ -1,3 +1,5 @@
+import {ClientDTO} from "../models/ClientDTO";
+
 export class StorageUtil {
   public static setToken(token): void {
     localStorage.setItem('token', token);
@@ -19,4 +21,11 @@ export class StorageUtil {
     return localStorage.getItem('email');
   }
 
+  public static setUser(user: ClientDTO): void {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  public static getUser(): ClientDTO {
+    return JSON.parse(localStorage.getItem('user'));
+  }
 }

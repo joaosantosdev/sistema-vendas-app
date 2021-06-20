@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {LoginDTO} from '../../models/LoginDTO';
 import {AuthService} from '../../services/auth.service';
 import {StorageUtil} from '../../utils/storage.util';
+import {ClientService} from "../../services/ClientService";
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private clientService: ClientService
   ) {
     if (StorageUtil.getToken()) {
       this.router.navigate(['app/home']);
@@ -33,8 +35,11 @@ export class LoginPage implements OnInit {
     console.log(this.loginForm);
     this.authService.login(this.loginForm).subscribe(response => {
       this.authService.successfulLogin(response.headers.get('Authorization'));
-      StorageUtil.setEmail(this.loginForm.email);
-      this.router.navigate(['app/home']);
+      this.clientService.getByEmail(this.loginForm.email).subscribe(client => {
+        StorageUtil.setEmail(this.loginForm.email);
+        StorageUtil.setUser(client);
+        this.router.navigate(['app/home']);
+      });
     }, error => {
     });
   }

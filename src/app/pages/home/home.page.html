@@ -1,3 +1,12 @@
 <div class="home-page">
+  <div class="content-info-user">
+    <div class="mb-15 info">
+      <h3 class="font-weight cl-default mt-0">{{client?.name.toUpperCase()}}</h3>
+      <h6 class="cl-default mt-0">SEJA BEM-VINDO</h6>
+    </div>
+    <div class="content-img">
+      <img class="img-user" [src]="urlImageClient" (error)="onErrorImage()">
+    </div>
+  </div>
   <app-category-items [categories]="categories"></app-category-items>
 </div>

@@ -3,6 +3,7 @@ import {ClientService} from '../../services/ClientService';
 import {ClientDTO} from '../../models/ClientDTO';
 import {StorageUtil} from '../../utils/storage.util';
 import {UrlUtil} from '../../utils/url.util';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,10 @@ export class ProfilePage implements OnInit {
   public client: ClientDTO;
   public errorImage = false;
 
-  constructor(private clientService: ClientService) {
+  constructor(
+    private clientService: ClientService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -32,5 +36,10 @@ export class ProfilePage implements OnInit {
 
   onErrorImage() {
     this.errorImage = true;
+  }
+
+  logout() {
+    StorageUtil.cleanToken();
+    this.router.navigate(['']);
   }
 }
