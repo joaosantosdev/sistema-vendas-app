@@ -1,5 +1,7 @@
 {
   "name": "sistemavendas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

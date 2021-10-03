@@ -1,0 +1,130 @@
+<div class="signup-page">
+
+  <form [formGroup]="form" (submit)="save()">
+    <div class="goback" (click)="goback()">
+      <ion-icon class="icon" name="chevron-back-outline"></ion-icon>
+      Voltar
+    </div>
+    <div class="d-flex mb-10">
+      <input-content label="Nome"
+                     required="true">
+        <input class="input"
+               formControlName="name"
+               name="name">
+      </input-content>
+    </div>
+    <div class="d-flex mb-10">
+      <input-content label="Email"
+                     required="true">
+        <input class="input"
+               formControlName="email"
+               name="email">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Senha"
+                     required="true">
+        <input class="input"
+               formControlName="password"
+               name="password">
+      </input-content>
+    </div>
+
+
+    <div class="d-flex mb-15">
+      <input-content label="Tipo de cliente"
+                     required="true">
+        <ion-item class="select">
+          <ion-select formControlName="typeClient" class="custom-options">
+            <ion-select-option [value]="2">Pessoa física</ion-select-option>
+            <ion-select-option [value]="1">Pessoa juridica</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </input-content>
+    </div>
+
+
+    <div class="d-flex mb-15">
+      <input-content label="CPF ou CNPJ">
+        <input class="input"
+               formControlName="cpfCnpj"
+               name="cpfCnpj">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Longadouro"
+                     required="true">
+        <input class="input"
+               formControlName="description"
+               name="description">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Número"
+      >
+        <input class="input"
+               formControlName="number"
+               name="number">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Bairro">
+        <input class="input"
+               formControlName="district"
+               name="district">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="CEP">
+        <input class="input"
+               formControlName="cep"
+               name="cep">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Telefone 1">
+        <input class="input"
+               formControlName="phone1"
+               name="phone1">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Telefone 2">
+        <input class="input"
+               formControlName="phone2"
+               name="phone2">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Telefone 3">
+        <input class="input"
+               formControlName="phone3"
+               name="phone3">
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Estado"
+                     required="true">
+        <ion-item class="select">
+          <ion-select  formControlName="stateId">
+            <ion-select-option [value]="state.id" *ngFor="let state of states">{{state.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </input-content>
+    </div>
+    <div class="d-flex mb-15">
+      <input-content label="Cidade"
+                     required="true">
+        <ion-item class="select">
+          <ion-select [disabled]="!form.get('stateId').value"  formControlName="cityId">
+            <ion-select-option [value]="city.id" *ngFor="let city of cities">{{city.name}}</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+      </input-content>
+    </div>
+    <button class="button bg-primary mb-10" type="submit">Criar conta</button>
+
+
+  </form>
+</div>

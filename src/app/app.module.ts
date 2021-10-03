@@ -13,8 +13,9 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {TabMenuComponent} from './components/tab-menu/tab-menu.component';
 import {TabItemComponent} from './components/tab-item/tab-item.component';
 import {ErrorInterceptorProvider} from './interceptors/error-interceptor';
-import {AuthService} from "./services/auth.service";
-import {ClientService} from "./services/ClientService";
+import {AuthService} from './services/auth.service';
+import {ClientService} from './services/client.service';
+import {StateService} from './services/state.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {ClientService} from "./services/ClientService";
     AuthService,
     ClientService,
     HttpService,
+    StateService,
     ErrorInterceptorProvider
   ],
   bootstrap: [AppComponent],

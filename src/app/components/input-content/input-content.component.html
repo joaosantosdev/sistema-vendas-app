@@ -1,0 +1,9 @@
+<div class="d-flex ">
+  <label class="label"
+  >{{label}}
+    <span class="required" *ngIf="required">
+      {{required ? '*' : ''}}
+    </span>
+  </label>
+  <ng-content></ng-content>
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ClientService} from '../../services/ClientService';
+import {ClientService} from '../../services/client.service';
 import {ClientDTO} from '../../models/ClientDTO';
 import {StorageUtil} from '../../utils/storage.util';
 import {UrlUtil} from '../../utils/url.util';

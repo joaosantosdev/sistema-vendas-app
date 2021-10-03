@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {LoginDTO} from '../../models/LoginDTO';
 import {AuthService} from '../../services/auth.service';
 import {StorageUtil} from '../../utils/storage.util';
-import {ClientService} from "../../services/ClientService";
+import {ClientService} from '../../services/client.service';
 
 @Component({
   selector: 'app-login-page',
@@ -42,6 +42,10 @@ export class LoginPage implements OnInit {
       });
     }, error => {
     });
+  }
+
+  signup() {
+    this.router.navigate(['signup']);
   }
 
 }

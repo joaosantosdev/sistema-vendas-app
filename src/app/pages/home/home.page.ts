@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../../services/category.service';
 import {CategoryDTO} from '../../models/CategoryDTO';
-import {UrlUtil} from "../../utils/url.util";
-import {StorageUtil} from "../../utils/storage.util";
-import {ClientDTO} from "../../models/ClientDTO";
-import {ClientService} from "../../services/ClientService";
+import {UrlUtil} from '../../utils/url.util';
+import {StorageUtil} from '../../utils/storage.util';
+import {ClientDTO} from '../../models/ClientDTO';
+import {ClientService} from '../../services/client.service';
 
 @Component({
   selector: 'app-home',
